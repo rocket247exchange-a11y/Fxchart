@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Forex Live — Candlesticks & Mirrored Emails</title>
+
+  <!-- Lightweight Charts (TradingView) -->
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><strong>FX</strong></div>
+        <div class="title">
+          <div class="main">FX Live — EUR/USD</div>
+          <div class="sub">Simulated live feed • Candlesticks • Mirrored emails</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="ticker">EURUSD · 1m</div>
+        <div class="buttons">
+          <button id="mirror-btn" class="btn" title="Mirror Live Trades">Mirror Live Trades</button>
+          <button id="pause-btn" class="btn ghost" title="Pause / Resume">Pause</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="card">
+      <!-- Chart container -->
+      <div id="chart" aria-label="Forex candlestick chart"></div>
+
+      <!-- bottom row: email stream + toasts -->
+      <div class="bottom-row">
+        <section id="stream" class="stream" aria-live="polite">
+          <div class="stream-header">
+            <div>
+              <div class="stream-title">Live mirrored emails (masked)</div>
+              <div class="stream-sub">Mirrors trade notifications below</div>
+            </div>
+            <div class="stream-controls">
+              <!-- future controls -->
+            </div>
+          </div>
+
+          <div id="email-list" class="email-list" role="log" aria-live="polite"></div>
+        </section>
+
+        <aside id="toasts" class="toasts" aria-live="polite" aria-atomic="true"></aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
